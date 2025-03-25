@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: var(--espaco2);
+  background-size: 300% 800%;
+  animation: movimentoEspaco 10s infinite alternate ease-in-out;
+}
+
+@keyframes movimentoEspaco {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gr {
+  background: var(--logo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🔹 Tipografia */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 🔹 Variáveis */
+:root {
+  --logo: linear-gradient(45deg, #a84300, #fe7e11, #ffae42, #fe7e11, #a84300);
+
+  --C00: #fff;
+  --C01: #fe7e11;
+  --C02: #000;
+  --C03: #f0f0f0;
+  --C04: #eaeaea;
+  --C05: #27262b;
+  --BKM: #2b2a2f;
+
+  --espaco2: linear-gradient(
+    80deg,
+    #1e1d24,
+    #27262b,
+    #3a3845,
+    #27262b,
+    #1e1d24
+  );
+}
+
+/* 🔹 Estrutura */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🔹 Z-index para os elementos principais */
+.menu,
+.grid-sobre,
+.sobre-item,
+.sobre-item img {
+  position: relative;
+  z-index: 10;
+}
+
+.uni-text {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--C00);
+  display: block;
+  margin: 50px auto;
+}
+
+@media (max-width: 1222px) {
+  .uni-text {
+    font-size: 1.8em;
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .uni-text {
+    font-size: 1.5em;
+    margin: 10px auto;
+  }
+}

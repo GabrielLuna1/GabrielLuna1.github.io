@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Gabriel Luna, desenvolvedor front-end com expertise em HTML semântico, CSS moderno e JavaScript. Confira meus projetos e habilidades.">
+  <meta name="keywords" content="desenvolvedor front-end, portfolio, HTML, CSS, JavaScript, acessibilidade web">
+  <meta name="author" content="Gabriel Luna">
+  <meta property="og:title" content="Gabriel Luna | Portfólio Front-End">
+  <meta property="og:description" content="Desenvolvedor front-end especializado em criar interfaces acessíveis e responsivas">
+  <meta property="og:type" content="website">
+  <title>Gabriel Luna | Desenvolvedor Front-End</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/asteroide2.png">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+  <header id="header">
+    <a id="logo" href="">Gabriel Luna</a>
+    <nav id="nav" aria-label="Navegação principal">
+      <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Início</a></li>
+        <li><a href="#informacoes"><i class="fa-solid fa-address-card"></i> Informações</a></li>
+        <li><a href="#Habilidades"><i class="fa-solid fa-award"></i> Habilidades</a></li>
+        <li><a href="#Portifolio"><i class="fa fa-lightbulb"></i> Portfólio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="main" role="main">
+    <div class="asteroides-container">
+      <div class="asteroide asteroide-1"></div>
+      <div class="asteroide asteroide-2"></div>
+      <div class="asteroide asteroide-3"></div>
+      <div class="asteroide asteroide-4"></div>
+    </div>
+
+
+    <div class="grid-sobre container" id="info">
+      <div class="sobre-item">
+        <h1>Gabriel Luna</h1>
+        <p>Desenvolvedor Front-End</p>
+        <p>Desenvolvedor Front-End especializado em HTML semântico, CSS moderno e JavaScript limpo, com compromisso com acessibilidade</p>
+        <a href="https://github.com/GabrielLuna1" class="btn">Ver meus projetos <i class="fa-solid fa-code"></i></a>
+      </div>
+      <picture class="sobre-item">
+        <img src="./img/astro1.png" alt="Ilustração de astronauta representando exploração digital">
+      </picture>
+    </div>
+  </main>
+
+
+  <section id="informacoes">
+    <div class="uni-text">
+      <h2>Informações</h2>
+      <img class="info-imgg" src="img/shap design.svg" alt="">
+    </div>
+    <div class="grid-info container">
+      <div class="grid-info-item">
+        <img src="img/astro2.jpg" alt="">
+      </div>
+      <div class="grid-info-item">
+        <h3>Sobre Mim</h3>
+        <p>Olá, eu sou Gabriel Luna,
+          sou um desenvolvedor web júnior apaixonado por tecnologia, morando em São Paulo, Brasil. Atualmente, estou em uma jornada emocionante para dominar o mundo da programação e criar soluções digitais que façam a diferença
+        </p>
+        <div class="grid-info-lista">
+          <div class="list">
+            <ul class="custom-list">
+              <li><strong>Name:</strong> Gabriel Luna</li>
+              <li><strong>Email:</strong> gabriellunajob@gmail.com</li>
+              <li><strong>Phone:</strong> +55 (11) 93500-4248</li>
+              <li><strong>Nationality:</strong> Brazilian</li>
+              <li><strong>Address:</strong> São Paulo, Brazil</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="Habilidades">
+    <div class="uni-text">
+      <h2>Habilidades</h2>
+      <img class="info-imgg" src="img/shap design.svg" alt="">
+    </div>
+    <div class="grid-skil container">
+      <div class="skills-container">
+        <!-- HTML -->
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="html-details">
+            <h3><i class="fab fa-html5"></i> HTML</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="html-details" class="skill-details">
+            <ul>
+              <li>Uso semântico das tags (header, section, article, etc.)</li>
+              <li>Estruturação acessível (ARIA quando necessário)</li>
+              <li>SEO básico através da semântica</li>
+              <li>Integração com templates</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="css-details">
+            <h3><i class="fab fa-css3-alt"></i> CSS</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="css-details" class="skill-details">
+            <ul>
+              <li>Layouts com Flexbox e Grid</li>
+              <li>Animações e transições</li>
+              <li>Layouts que se adaptam de 320px até 4K</li>
+              <li>Criação de layouts responsivos com media queries</li>
+              <li>Variáveis CSS e organização</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fab fa-js-square"></i> JavaScript</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Manipulação do DOM</li>
+              <li>Fetch API e AJAX</li>
+              <li>ES6+ (arrow functions, destructuring)</li>
+              <li>Eventos e listeners</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fab fa-bootstrap"></i> Bootstrap </h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Criação de layouts responsivos com o sistema de grid</li>
+              <li>Utilização de componentes pré-estabelecidos</li>
+              <li>Customização via SASS</li>
+              <li>Integração com JavaScript do Bootstrap</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fas fa-cube"></i> Bulma</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Desenvolvimento com sistema de columns e flexbox</li>
+              <li>Utilização de helpers e mixins</li>
+              <li>Customização de variáveis CSS</li>
+              <li>Criação de layouts baseados em componentes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fas fa-wind"></i> Tailwind</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Desenvolvimento utilitário-first</li>
+              <li>Customização do config tailwind</li>
+              <li>Componentização com @apply</li>
+              <li>Otimização para produção</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fab fa-js"></i> TypeScript</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Tipagem básica de variáveis e funções</li>
+              <li>Interfaces e tipos simples</li>
+              <li>Integração com JavaScript existente</li>
+              <li>Configuração básica de tsconfig</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fab fa-react"></i> React</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Criação de componentes funcionais</li>
+              <li>Uso básico de hooks (useState, useEffect)</li>
+              <li>Gerenciamento simples de estado</li>
+              <li>Integração com APIs REST</li>
+              <li class="learning">(Em fase de aprendizado)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <button class="skill-header" aria-expanded="false" aria-controls="js-details">
+            <h3><i class="fa-solid fa-n"></i> Next.js</h3>
+            <span class="skill-toggle">+</span>
+          </button>
+          <div id="js-details" class="skill-details">
+            <ul>
+              <li>Configuração inicial de projetos</li>
+              <li>Roteamento básico com pages</li>
+              <li>Renderização no lado do servidor (SSR)</li>
+              <li>Geração estática (SSG)</li>
+              <li class="learning">(Em fase de aprendizado)</li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="item-skill">
+        <img src="img/Astro12.jpg" alt="Ilustração de astronauta representando habilidades técnicas">
+      </div>
+    </div>
+  </section>
+
+  <section id="Portifolio">
+    <div class="container">
+      <div class="uni-text">
+        <h2>Portfólio</h2>
+        <img class="info-imgg" src="img/shap design.svg" alt="">
+        <p>
+          Este projeto freelancer foi desenvolvido com o objetivo de criar uma página moderna e funcional para divulgar os cursos da plataforma <strong>Esc Cursos</strong>, especializada em preparação para concursos públicos. </strong>
+        </p>
+      </div>
+      <div id="galeria">
+        <div class="">
+          <div class="imagem-container">
+            <img src="img/Port.jpg" alt="Captura de tela do projeto Esc Cursos mostrando layout responsivo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer id="footer">
+    <div class="grid-footer container">
+
+      <div class="footer-logo">
+        <a href="#">Gabriel Luna</a>
+      </div>
+
+
+      <div class="footer-contato">
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:gabriellunajob@gmail.com"><i class="fa-solid fa-envelope"></i> gabriellunajob@gmail.com</a></li>
+          <li><a href="https://github.com/GabrielLuna1" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/gabriel-luna-14b00821b/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="tel:+5511935004248"><i class="fa-solid fa-phone"></i>+55 (11) 93500-4248</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Navegação</h3>
+        <nav aria-label="Navegação do rodapé">
+          <a href="#"><i class="fa-solid fa-house"></i> Início</a>
+          <a href="#informacoes"><i class="fa-solid fa-address-card"></i> Informações</a>
+          <a href="#Habilidades"><i class="fa-solid fa-award"></i> Habilidades</a>
+          <a href="#Portifolio"><i class="fa fa-lightbulb"></i> Portfólio</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Top -->
+  <button id="back-to-top" class="back-to-top">
+    <img src="img/rocket.svg" alt="Voltar ao topo">
+  </button>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

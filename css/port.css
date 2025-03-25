@@ -1,0 +1,43 @@
+/* 🔹 Estrutura */
+.imagem-container {
+  height: 650px;
+  overflow-y: auto;
+  border: 6px solid var(--C01);
+  border-radius: 8px;
+}
+
+.imagem-container img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+#Portifolio .info-imgg {
+  margin-bottom: 30px;
+}
+
+#Portifolio p {
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--C04);
+  margin: 30px auto;
+}
+
+@media (max-width: 1222px) {
+  #Portifolio p {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  #Portifolio p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 576px) {
+  #Portifolio p {
+    font-size: 0.9em;
+  }
+}

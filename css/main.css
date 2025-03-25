@@ -1,0 +1,171 @@
+/* 🔹 Estrutura */
+main {
+  position: relative;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-sobre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.sobre-item span {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: var(--C04);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sobre-item h1 {
+  background: var(--logo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3.5em;
+  font-weight: 800;
+  line-height: 1.2;
+  background-size: 300% 800%;
+  animation: movimentoEspaco 10s infinite alternate ease-in-out;
+}
+
+.sobre-item p {
+  font-size: 1.5em;
+  color: var(--C04);
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.sobre-item a {
+  padding: 14px 28px;
+  font-size: 1.2em;
+  font-weight: 600;
+  background: var(--C01);
+  color: var(--C00);
+  border-radius: 10px;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.sobre-item a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 15px rgba(254, 126, 17, 0.4);
+}
+
+.asteroides-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.asteroide {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: flutuar 8s infinite alternate ease-in-out;
+}
+
+.asteroide-1 {
+  background-image: url("../img/asteroide3.png");
+  top: 5%;
+  left: 5%;
+}
+
+.asteroide-2 {
+  background-image: url("../img/asteroide1.png");
+  top: 30%;
+  right: 10%;
+}
+
+.asteroide-3 {
+  background-image: url("../img/asteroide.png");
+  top: 40%;
+  left: 5%;
+}
+
+.asteroide-4 {
+  background-image: url("../img/asteroide2.png");
+  top: 20%;
+  right: 20%;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(50px) rotate(15deg);
+  }
+}
+
+@media (max-width: 1600px) {
+  .asteroides-container {
+    display: none;
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .sobre-item span {
+    font-size: 1.6em;
+  }
+
+  .sobre-item h1 {
+    font-size: 2.8em;
+  }
+
+  .sobre-item p {
+    font-size: 1.2em;
+  }
+
+  .sobre-item a {
+    font-size: 1.1em;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-sobre {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .sobre-item img {
+    display: block;
+    margin: 30px auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .sobre-item span {
+    font-size: 1.4em;
+  }
+
+  .sobre-item h1 {
+    font-size: 2.2em;
+  }
+
+  .sobre-item p {
+    font-size: 1em;
+  }
+
+  .sobre-item a {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}

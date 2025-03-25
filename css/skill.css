@@ -1,0 +1,115 @@
+/* 🔹 Estrutura*/
+.grid-skil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  padding: 60px;
+  gap: 60px;
+}
+
+/* 🔹Estilos para Dropdown */
+.skill-card {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-header {
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  color: var(--C04);
+  transition: all 0.3s ease;
+}
+
+.skill-header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-header h3 i {
+  color: var(--C01);
+}
+
+.skill-header:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.skill-toggle {
+  font-size: 1.5em;
+  transition: transform 0.3s ease;
+}
+
+.item-skill img {
+  border-radius: 10px;
+  border: 4px solid var(--C01);
+  margin: 0 auto;
+}
+
+.skill-details {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.skill-card.active .skill-details {
+  max-height: 300px;
+  padding: 0 20px 20px;
+}
+
+.skill-card.active .skill-toggle {
+  transform: rotate(45deg);
+}
+
+.skill-details ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.skill-details li {
+  margin-bottom: 8px;
+  color: var(--C04);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.learning {
+  font-style: italic;
+  opacity: 0.8;
+  color: var(--C01);
+}
+
+@media (max-width: 1222px) {
+  .grid-skil {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .skill-header h3 {
+    font-size: 1.5em;
+  }
+  .item-skill img {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill-header {
+    padding: 12px 15px;
+  }
+
+  .skill-details li {
+    font-size: 0.9em;
+  }
+}

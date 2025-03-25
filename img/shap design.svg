@@ -1,0 +1,19 @@
+<svg id="shap_design" data-name="shap design" xmlns="http://www.w3.org/2000/svg" width="130" height="9" viewBox="0 0 130 9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fe7e11;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_3" data-name="Rounded Rectangle 3" class="cls-1" d="M897.912,1880H1024.09c1.05,0,1.91.45,1.91,1s-0.86,1-1.91,1H897.912c-1.056,0-1.912-.45-1.912-1S896.856,1880,897.912,1880Z" transform="translate(-896 -1880)"/>
+  <path id="Rounded_Rectangle_3_copy" data-name="Rounded Rectangle 3 copy" class="cls-2" d="M907.618,1887H1014.38a1.119,1.119,0,1,1,0,2H907.618A1.118,1.118,0,1,1,907.618,1887Z" transform="translate(-896 -1880)"/>
+</svg>
