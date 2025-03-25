@@ -39,6 +39,7 @@
 
 .skill-header h3 i {
   color: var(--C01);
+  font-size: 1.8em;
 }
 
 .skill-header:hover {
