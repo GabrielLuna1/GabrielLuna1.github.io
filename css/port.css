@@ -40,4 +40,15 @@
   #Portifolio p {
     font-size: 0.9em;
   }
+  .imagem-container img {
+  }
+}
+
+@media (max-width: 330px) {
+  .imagem-container {
+    height: auto;
+    overflow-y: auto;
+    border: 2px solid var(--C01);
+    border-radius: 8px;
+  }
 }

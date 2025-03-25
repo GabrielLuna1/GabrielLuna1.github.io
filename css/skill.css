@@ -93,7 +93,7 @@
 @media (max-width: 1222px) {
   .grid-skil {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 10px;
   }
 
   .skill-header h3 {
@@ -106,7 +106,6 @@
 
 @media (max-width: 576px) {
   .skill-header {
-    padding: 12px 15px;
   }
 
   .skill-details li {

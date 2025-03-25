@@ -68,7 +68,7 @@
 
 @media (max-width: 1222px) {
   .grid-info {
-    grid-template-columns: 1fr;
+    display: block;
     margin-left: 0;
     margin-right: 0;
     text-align: center;
@@ -110,7 +110,7 @@
   }
 
   .custom-list li {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 
   .uni-text {
