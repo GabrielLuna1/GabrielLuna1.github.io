@@ -35,4 +35,4 @@ Atenciosamente, Gabriel Luna.
   <a href="https://www.linkedin.com/in/gabriel-luna-14b00821b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </div><br>
 
-![Image](https://github.com/user-attachments/assets/2c29c81a-3b12-4526-ad5a-54e2ef1ef375)
+![Image](https://github.com/user-attachments/assets/6bf2710a-b551-440b-82a5-4f881abb64c4)
