@@ -143,6 +143,10 @@ main {
     margin-left: 0;
     margin-right: 0;
     text-align: center;
+    padding: 0;
+  }
+  .sobre-item h1 {
+    font-size: 1.8em;
   }
 
   .sobre-item img {
@@ -156,8 +160,9 @@ main {
     font-size: 1.4em;
   }
 
-  .sobre-item h1 {
-    font-size: 2.2em;
+  .sobre-item img {
+    display: block;
+    margin: 10px auto;
   }
 
   .sobre-item p {
