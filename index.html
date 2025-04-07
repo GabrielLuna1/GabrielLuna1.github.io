@@ -17,7 +17,7 @@
   <link rel="icon" type="image/x-icon" href="img/asteroide2.png">
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -300,6 +300,45 @@
   <button id="back-to-top" class="back-to-top">
     <img src="img/rocket.svg" alt="Voltar ao topo">
   </button>
+
+  <!-- Botão de toggle do chat -->
+  <button id="toggleBot" class="chat-toggle" aria-label="Abrir chat de assistente virtual" title="Conversar com o assistente">
+    <i class="fas fa-comment-dots"></i>
+    <span class="notification-badge" aria-hidden="true"></span>
+  </button>
+
+  <!-- Container do chat -->
+  <div id="chatBot" class="chat-container hidden" aria-live="polite" aria-atomic="true">
+    <header class="chat-header">
+      <h2>Assistente Virtual <i class="fa-brands fa-bots"></i></h2>
+      <button class="close-chat" aria-label="Fechar chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </header>
+
+    <div id="chatBox" class="chat-box" role="log" aria-live="polite"></div>
+
+    <div class="typing-indicator hidden" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <form id="chatForm" class="chat-form" novalidate>
+      <div class="input-group">
+        <input type="text" id="userInput" class="chat-input" placeholder="Digite sua mensagem..." aria-label="Digite sua mensagem" autocomplete="off" required>
+        <button id="sendBtn" class="send-button" type="submit" aria-label="Enviar mensagem">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </form>
+
+    <footer class="chat-footer">
+      <small>Assistente virtual do portfólio de Gabriel Luna</small>
+    </footer>
+  </div>
+
+
   <script src="js/script.js"></script>
 </body>
 
