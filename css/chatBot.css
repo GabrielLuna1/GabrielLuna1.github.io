@@ -118,7 +118,6 @@
   padding: 16px;
   color: var(--C04);
   font-size: 14px;
-  scrollbar-width: thin;
   scrollbar-color: var(--C01) var(--C05);
 }
 
