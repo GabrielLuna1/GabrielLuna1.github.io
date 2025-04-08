@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Limite de caracteres
-    if (msg.length > 50) {
+    if (msg.length > 300) {
       addMessage("Sistema", "Mensagem muito longa (máximo 50 caracteres).");
       return false;
     }
