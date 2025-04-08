@@ -2,7 +2,6 @@ Galactic Luna 🚀🌕
 <h1 style="text-align: center;">Projeto de Landing Page: HTML, CSS e JavaScript ✨</h1>
 Olá Viajantes! 🚀
 
----
 
 Desenvolvi uma Landing Page como parte do meu aprendizado em desenvolvimento web, utilizando apenas HTML, CSS e JavaScript. O design foi criado por mim, do zero, e os ícones utilizados foram retirados do Font Awesome e Flaticon, o que ajudou a enriquecer a interface.
 
