@@ -33,4 +33,4 @@ Gabriel Luna
 
 ---
 
-![Image](https://github.com/user-attachments/assets/6bf2710a-b551-440b-82a5-4f881abb64c4)
+![Image](https://github.com/user-attachments/assets/e231bd58-7c4b-44f2-8e8c-e14664c4e7c9)
