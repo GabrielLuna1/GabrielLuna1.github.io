@@ -5,8 +5,6 @@ Olá Viajantes! 🚀
 
 Desenvolvi uma Landing Page como parte do meu aprendizado em desenvolvimento web, utilizando apenas HTML, CSS e JavaScript. O design foi criado por mim, do zero, e os ícones utilizados foram retirados do Font Awesome e Flaticon, o que ajudou a enriquecer a interface.
 
----
-
 <div style="display: inline_block"> <img align="center" alt="GL-HTML" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"> <img align="center" alt="GL-CSS" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"> <img align="center" alt="GL-Js" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> </div>
 
 ---
