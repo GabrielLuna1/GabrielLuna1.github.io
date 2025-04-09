@@ -96,6 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const userInput = document.getElementById("userInput");
   const chatBox = document.getElementById("chatBox");
   const typingIndicator = document.querySelector(".typing-indicator");
+  let securityViolations =
+    parseInt(localStorage.getItem("securityViolations")) || 0;
+  let cooldownActive = localStorage.getItem("cooldownActive") === "true";
+  let cooldownEndTime = parseInt(localStorage.getItem("cooldownEndTime")) || 0;
+  const MAX_VIOLATIONS = 3;
+  // const COOLDOWN_DURATION = 5 * 60 * 1000; // 5 minutos
+  const COOLDOWN_DURATION = 30 * 1000; // 30 segundos teste
+  checkPersistedCooldown();
 
   // Variáveis de estado
   let firstInteraction = true;
@@ -164,35 +172,85 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Validação de mensagem
+  // ▼▼▼ 2. Adicione esta função junto com suas outras funções auxiliares ▼▼▼
+  function activateCooldown() {
+    cooldownActive = true;
+    cooldownEndTime = Date.now() + COOLDOWN_DURATION;
+    userInput.disabled = true;
+    toggleBot.disabled = true;
+
+    cooldownActive = true;
+    cooldownEndTime = Date.now() + COOLDOWN_DURATION;
+
+    // Persiste no localStorage
+    localStorage.setItem("cooldownActive", "true");
+    localStorage.setItem("cooldownEndTime", cooldownEndTime.toString());
+    localStorage.setItem("securityViolations", MAX_VIOLATIONS.toString());
+
+    // Timer visual (será removido automaticamente)
+    const timerHtml = `
+  <div id="cooldownTimer" class="cooldown-message">
+    ⚠️ Modo de segurança ativo (Tempo restante: ${Math.ceil(
+      COOLDOWN_DURATION / 1000
+    )}s)
+  </div>`;
+    chatBox.insertAdjacentHTML("beforeend", timerHtml);
+
+    const timerElement = document.getElementById("cooldownTimer");
+    const cooldownInterval = setInterval(() => {
+      const remaining = Math.ceil((cooldownEndTime - Date.now()) / 1000);
+
+      if (remaining <= 0) {
+        clearInterval(cooldownInterval);
+        cooldownActive = false;
+        userInput.disabled = false;
+        toggleBot.disabled = false;
+        timerElement.remove();
+        addMessage("Sistema", "✅ Proteção desativada. Pode continuar!");
+      } else {
+        timerElement.textContent = `⚠️ Modo de segurança ativo (Tempo restante: ${remaining}s)`;
+      }
+    }, 1000);
+  }
+
+  // ▼▼▼ 3. SUBSTITUA sua função validateMessage por esta versão ▼▼▼
   function validateMessage(msg) {
-    // Permite números de 1 a 8 como mensagem válida
-    if (/^[1-8]$/.test(msg)) {
+    // 1. Verificação de cooldown (novo)
+    if (cooldownActive) {
+      const timeLeft = Math.ceil((cooldownEndTime - Date.now()) / 1000);
+      addMessage(
+        "Sistema",
+        `⏳ Modo de segurança ativo. Tente novamente em ${timeLeft} segundos.`
+      );
+      return false;
+    }
+
+    // 2. Validação numérica (mantida da sua versão original)
+    if (/^[1-9]$/.test(msg)) {
+      securityViolations = 0; // Reseta contador se for comando válido
       return true;
     }
 
-    // Mensagem vazia
+    // 3. Validações existentes (modificadas para contar violações)
     if (!msg || msg.trim().length === 0) {
       addMessage("Sistema", "Por favor, digite uma mensagem válida.");
       return false;
     }
 
-    // Mensagem muito curta (exceto para números)
     if (msg.length < 2) {
       addMessage(
         "Sistema",
-        "Mensagem muito curta. Por favor, escreva algo mais substantivo."
+        "Mensagem muito curta. Escreva algo mais substantivo."
       );
       return false;
     }
 
-    // Limite de caracteres
     if (msg.length > 300) {
       addMessage("Sistema", "Mensagem muito longa (máximo 300 caracteres).");
       return false;
     }
 
-    // Padrões proibidos
+    // 4. Padrões proibidos (agora conta violações)
     const prohibitedPatterns = [
       /<script.*?>.*?<\/script>/gi,
       /<.*?on\w+\s*=.*?>/gi,
@@ -200,14 +258,38 @@ document.addEventListener("DOMContentLoaded", function () {
       /\n{3,}/gi,
       /http[s]?:\/\//gi,
       /[\uD800-\uDFFF]/g,
+      /(?:\b(?:select|insert|delete|update|drop|alter)\b)/gi, // Novo: SQLi
     ];
 
     if (prohibitedPatterns.some((regex) => regex.test(msg))) {
-      addMessage("Sistema", "Mensagem contém conteúdo não permitido.");
+      securityViolations++;
+      addMessage("Sistema", "⚠️ Conteúdo bloqueado por segurança");
+
+      if (securityViolations >= MAX_VIOLATIONS) {
+        activateCooldown();
+      }
       return false;
     }
 
+    // 5. Mensagem válida (reseta contador)
+    securityViolations = 0;
     return true;
+  }
+
+  function checkPersistedCooldown() {
+    if (localStorage.getItem("cooldownActive") === "true") {
+      const remainingTime =
+        parseInt(localStorage.getItem("cooldownEndTime")) - Date.now();
+
+      if (remainingTime > 0) {
+        activateCooldown(); // Reativa o cooldown com o tempo restante
+      } else {
+        // Limpa se o cooldown já expirou
+        localStorage.removeItem("cooldownActive");
+        localStorage.removeItem("cooldownEndTime");
+        localStorage.removeItem("securityViolations");
+      }
+    }
   }
 
   // Sanitização de mensagem (versão aprimorada)
@@ -261,18 +343,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // Mensagem de boas-vindas
   function showWelcomeMessage() {
     const welcomeMessage = `
-    👋 Olá! Eu sou o assistente deste portfólio.<br><br>
+    👋 Olá! Eu sou o assistente deste portfólio.
 
-    Posso te ajudar com informações sobre:<br><br>
+    Posso te ajudar com informações sobre<br><br>
 
-    1️⃣ <strong>O desenvolvedor</strong> (quem sou)<br>
-    2️⃣ <strong>Formação</strong> (minha trajetória acadêmica)<br>
-    3️⃣ <strong>Sobre este portfólio</strong> (como foi feito e objetivo)<br>
-    4️⃣ <strong>Objetivos profissionais</strong> (minhas metas)<br>
-    5️⃣ <strong>Estudos e cursos</strong> (o que tenho aprendido)<br>
-    6️⃣ <strong>Habilidades e tecnologias</strong> (ferramentas que domino)<br>
-    7️⃣ <strong>Idiomas</strong> (meu nível em línguas)<br>
-    8️⃣ <strong>Contato</strong> (como falar comigo)<br><br>
+    1️⃣ <strong>O desenvolvedor</strong><br>
+    2️⃣ <strong>Formação</strong><br>
+    3️⃣ <strong>Sobre este portfólio</strong><br>
+    4️⃣ <strong>Objetivos profissionais</strong><br>
+    5️⃣ <strong>Estudos e cursos</strong><br>
+    6️⃣ <strong>Habilidades e tecnologias</strong><br>
+    7️⃣ <strong>Idiomas</strong><br>
+    8️⃣ <strong>Contato</strong><br>
+    9️⃣ <strong>Freelancer</strong><br><br>
 
     👉 <strong>Digite o número da opção que deseja saber mais!</strong>
     `;
@@ -296,15 +379,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       const respostas = [
         `${saudacaoHora}! 😊 Posso te ajudar com informações sobre:<br><br>
-        1️⃣ Quem é o dev do projeto<br>
-        2️⃣ Formação acadêmica<br>
-        3️⃣ Sobre esse Portfólio<br>
-        4️⃣ Objetivo profissional<br>
-        5️⃣ Estudos e cursos<br>
-        6️⃣ Habilidades/Tecnologias<br>
-        7️⃣ Idiomas e Proficiência<br>
-        8️⃣ Como entrar em contato<br><br>
-
+   1️⃣ <strong>O desenvolvedor</strong><br>
+    2️⃣ <strong>Formação</strong><br>
+    3️⃣ <strong>Sobre este portfólio</strong><br>
+    4️⃣ <strong>Objetivos profissionais</strong><br>
+    5️⃣ <strong>Estudos e cursos</strong><br>
+    6️⃣ <strong>Habilidades e tecnologias</strong><br>
+    7️⃣ <strong>Idiomas</strong><br>
+    8️⃣ <strong>Contato</strong><br>
+    9️⃣ <strong>Freelancer</strong><br><br>
         Digite o número da opção que deseja!<br>
         `,
       ];
@@ -494,14 +577,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       response = `🤖 Sou um assistente virtual criado para apresentar o portfólio do Gabriel Luna!<br><br>
       Posso te ajudar com:<br><br>
-      1️⃣ Quem é o dev do projeto<br>
-      2️⃣ Formação acadêmica<br>
-      3️⃣ Sobre esse Portfólio<br>
-      4️⃣ Objetivo profissional<br>
-      5️⃣ Estudos e cursos<br>
-      6️⃣ Habilidades/Tecnologias<br>
-      7️⃣ Idiomas e Proficiência<br>
-      8️⃣ Como entrar em contato<br><br>
+      1️⃣ <strong>O desenvolvedor</strong><br>
+    2️⃣ <strong>Formação</strong><br>
+    3️⃣ <strong>Sobre este portfólio</strong><br>
+    4️⃣ <strong>Objetivos profissionais</strong><br>
+    5️⃣ <strong>Estudos e cursos</strong><br>
+    6️⃣ <strong>Habilidades e tecnologias</strong><br>
+    7️⃣ <strong>Idiomas</strong><br>
+    8️⃣ <strong>Contato</strong><br>
+    9️⃣ <strong>Freelancer</strong><br><br>
       Digite o número da opção desejada!`;
     }
 
@@ -524,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 12. Projetos/Freelancer
     else if (
-      /(projeto|projetos|freelancer|landing page|trabalho freelancer|trabalhos anteriores|já fez algum projeto|exemplos de projetos|portfólio prático|tem algum site publicado)/i.test(
+      /(projeto|9|projetos|freelancer|landing page|trabalho freelancer|trabalhos anteriores|já fez algum projeto|exemplos de projetos|portfólio prático|tem algum site publicado)/i.test(
         msg
       )
     ) {
@@ -540,17 +624,8 @@ document.addEventListener("DOMContentLoaded", function () {
       • Performance otimizada<br>
       • 100% responsivo<br>
       🔗 <a href="https://gabrielluna1.github.io" target="_blank">Visitar portfólio</a><br><br>
-      
-      Digite <strong>6</strong> para saber sobre as tecnologias usadas.`;
-    }
 
-    // 13. Detalhes técnicos
-    else if (
-      /(detalhes técnicos|detalhes tecnicos|tecnicos|aspectos técnicos|tecnicalidades|implementação técnica)/i.test(
-        msg
-      )
-    ) {
-      response = `🔧 <strong>Detalhes Técnicos dos Projetos:</strong><br><br>
+      <strong>Detalhes Técnicos dos Projetos:</strong><br><br>
       <strong>ESC Cursos:</strong><br>
       • Arquitetura: HTML5, CSS3, JavaScript vanilla<br>
       • Features: Formulários com validação customizada<br>
@@ -562,7 +637,8 @@ document.addEventListener("DOMContentLoaded", function () {
       • JavaScript sem dependências<br>
       • Deploy no GitHub Pages<br><br>
       
-      Digite <strong>6</strong> para saber sobre minhas habilidades.`;
+      Digite <strong>6</strong> para saber sobre minhas habilidades.
+      `;
     }
 
     // 14. Métodos de estudo
@@ -589,14 +665,15 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       response = `🤖 <strong>Como posso te ajudar:</strong><br><br>
       Posso te ajudar com:<br><br>
-      1️⃣ Quem é o dev do projeto<br>
-      2️⃣ Formação acadêmica<br>
-      3️⃣ Sobre esse Portfólio<br>
-      4️⃣ Objetivo profissional<br>
-      5️⃣ Estudos e cursos<br>
-      6️⃣ Habilidades/Tecnologias<br>
-      7️⃣ Idiomas e Proficiência<br>
-      8️⃣ Como entrar em contato<br><br>
+     1️⃣ <strong>O desenvolvedor</strong><br>
+    2️⃣ <strong>Formação</strong><br>
+    3️⃣ <strong>Sobre este portfólio</strong><br>
+    4️⃣ <strong>Objetivos profissionais</strong><br>
+    5️⃣ <strong>Estudos e cursos</strong><br>
+    6️⃣ <strong>Habilidades e tecnologias</strong><br>
+    7️⃣ <strong>Idiomas</strong><br>
+    8️⃣ <strong>Contato</strong><br>
+    9️⃣ <strong>Freelancer</strong><br><br>
       Digite o número da opção desejada! 😊`;
     }
 
@@ -631,14 +708,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mensagem padrão inteligente
     else {
       response = `🤔 <strong>Não entendi completamente.</strong> Posso te ajudar com:<br><br>
-      1️⃣ Quem é o dev do projeto<br>
-      2️⃣ Formação acadêmica<br>
-      3️⃣ Sobre esse Portfólio<br>
-      4️⃣ Objetivo profissional<br>
-      5️⃣ Estudos e cursos<br>
-      6️⃣ Habilidades/Tecnologias<br>
-      7️⃣ Idiomas e Proficiência<br>
-      8️⃣ Como entrar em contato<br><br>
+     1️⃣ <strong>O desenvolvedor</strong><br>
+    2️⃣ <strong>Formação</strong><br>
+    3️⃣ <strong>Sobre este portfólio</strong><br>
+    4️⃣ <strong>Objetivos profissionais</strong><br>
+    5️⃣ <strong>Estudos e cursos</strong><br>
+    6️⃣ <strong>Habilidades e tecnologias</strong><br>
+    7️⃣ <strong>Idiomas</strong><br>
+    8️⃣ <strong>Contato</strong><br>
+    9️⃣ <strong>Freelancer</strong><br><br>
       Digite o número da opção desejada!`;
     }
 

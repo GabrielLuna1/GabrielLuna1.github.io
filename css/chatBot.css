@@ -150,6 +150,19 @@
   animation: fadeIn 0.3s ease;
 }
 
+.cooldown-active {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+input:disabled,
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
