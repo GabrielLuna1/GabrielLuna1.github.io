@@ -28,6 +28,22 @@ Criei essa Landing Page como parte do meu aprendizado em desenvolvimento web. To
 
 ---
 
+## 📈 Resultados no Lighthouse
+
+A aplicação foi avaliada com ótimos resultados na auditoria do Lighthouse:
+
+| Categoria         | Nota (%) |
+|-------------------|----------|
+| **Performance**   | 98       |
+| **Accessibility** | 87       |
+| **Best Practices**| 100      |
+| **SEO**           | 100      |
+
+Esses indicadores reforçam a qualidade do projeto em termos de velocidade, acessibilidade, boas práticas e visibilidade nos mecanismos de busca. 🚀
+
+---
+
+
 ## 🔒 Validações de Segurança no Chatbot
 
 A segurança é um dos pilares do meu projeto. Para garantir uma experiência protegida ao usuário, implementei diversas validações no chatbot com foco na **prevenção de ataques comuns** em aplicações web. Essas proteções foram pensadas para evitar a exploração de brechas e comportamentos maliciosos, garantindo uma interação segura, limpa e estável com o sistema.
