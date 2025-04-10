@@ -1,0 +1,28 @@
+{
+  "name": "galactic_luna",
+  "version": "1.0.0",
+  "description": "Galactic Luna 🚀🌕\r <h1 style=\"text-align: center;\">Projeto de Landing Page: HTML, CSS e JavaScript ✨</h1>\r Olá Viajantes! 🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielLuna1/GabrielLuna1.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielLuna1/GabrielLuna1.github.io/issues"
+  },
+  "homepage": "https://github.com/GabrielLuna1/GabrielLuna1.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-header": "^2.0.9",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^1.4.1"
+  }
+}

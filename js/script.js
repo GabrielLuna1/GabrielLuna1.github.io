@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let cooldownActive = localStorage.getItem("cooldownActive") === "true";
   let cooldownEndTime = parseInt(localStorage.getItem("cooldownEndTime")) || 0;
   const MAX_VIOLATIONS = 3;
-  const COOLDOWN_DURATION = 15 * 60 * 1000; // 5 minutos
+  const COOLDOWN_DURATION = 15 * 60 * 1000; // 15 minutos
   checkPersistedCooldown();
 
   // Variáveis de estado
