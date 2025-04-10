@@ -23,23 +23,43 @@ Me preocupei bastante com a segurança do chatbot, e implementei várias camadas
 
 ---
 
-🔒 Tipos de Ataques Bloqueados
-Tipo de Ataque	Como é Detectado	Como é Bloqueado
-1. XSS (Cross-Site Scripting)	<script> ou atributos como onerror	Regex (<script.*?>.*?<\/script> e on\w+=) e uso de textContent para sanitização
-2. SQL Injection (SQLi)	' OR 1=1 --, SELECT * FROM users	Regex para palavras-chave SQL como SELECT, INSERT, DELETE
-3. CSRF (Cross-Site Request Forgery)	Formulários falsos externos	Validação de conteúdo e origem
-4. SSRF (Server-Side Request Forgery)	URLs internas como http://localhost/admin	Regex para bloquear padrões suspeitos + filtro de IPs internos
-5. Command Injection	; rm -rf /, `	cat /etc/passwd`
-6. DoS (Denial of Service)	Envio excessivo de mensagens	Rate limit de 1 mensagem/segundo + cooldown de 5 minutos após 3 tentativas
-7. Ataques Invisíveis (Unicode Zero-Width)	Caracteres como \u200B	Regex específica para esses caracteres: [\u200B-\u200D\uFEFF]
-8. Template Injection	{{7*7}}, ${exec('...')}	Whitelist de caracteres e bloqueio de padrões suspeitos
-🛡️ Proteções Extras
-Mecanismo	Protege Contra
-Cooldown persistente	Força bruta
-Sanitização de links	Redirecionamentos maliciosos
-Logs de segurança	Análise de padrões e auditoria
-⚡ Otimizando o CSS com Clean CSS CLI
-Para tornar o CSS mais leve e eficiente, utilizei o pacote clean-css-cli, que permite minificar e combinar arquivos CSS via terminal.
+
+## 🔒 Validações de Segurança no Chatbot
+
+A segurança é um dos pilares do meu projeto. Para garantir uma experiência protegida ao usuário, implementei diversas validações no chatbot com foco na **prevenção de ataques comuns** em aplicações web. Essas proteções foram pensadas para evitar a exploração de brechas e comportamentos maliciosos, garantindo uma interação segura, limpa e estável com o sistema.
+
+Obviamente, como qualquer sistema em desenvolvimento, ainda podem existir brechas — este projeto foi construído como parte do meu aprendizado em segurança da informação. As validações implementadas são fruto de estudos e testes práticos para entender como mitigar vulnerabilidades comuns de forma eficiente.
+
+Abaixo, apresento uma tabela com os principais **tipos de ataques bloqueados** e as técnicas utilizadas para detecção e neutralização.
+
+---
+
+## 🧨 Tipos de Ataques Bloqueados
+
+| Tipo de Ataque                        | Como é Detectado                                      | Como é Bloqueado                                                                 |
+|--------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------------------|
+| **XSS (Cross-Site Scripting)**       | Uso de `<script>` ou atributos como `onerror`         | Regex (`<script.*?>.*?<\/script>`, `on\w+=`) + `textContent` para sanitização    |
+| **SQL Injection (SQLi)**             | Frases como `' OR 1=1 --`, `SELECT * FROM users`       | Regex para bloquear palavras-chave como `SELECT`, `INSERT`, `DELETE`            |
+| **CSRF (Cross-Site Request Forgery)**| Formulários falsos vindos de sites externos           | Validação da origem e conteúdo das requisições                                  |
+| **SSRF (Server-Side Request Forgery)**| URLs internas como `http://localhost/admin`           | Regex para bloquear padrões + filtro de IPs internos                            |
+| **Command Injection**                | Comandos como `; rm -rf /`, `| cat /etc/passwd`        | Whitelist de caracteres permitidos                                              |
+| **DoS (Denial of Service)**          | Envio contínuo de mensagens                           | Rate limit de 1 msg/segundo + cooldown de 5 min após 3 violações                |
+| **Ataques Invisíveis (Unicode Zero-Width)** | Caracteres como `\u200B`                         | Regex específica: `[\u200B-\u200D\uFEFF]`                                        |
+| **Template Injection**               | Expressões como `{{7*7}}`, `${exec('...')}`            | Whitelist de caracteres + bloqueio de padrões suspeitos                         |
+
+---
+
+## 🛡️ Proteções Extras
+
+| Mecanismo                  | Protege Contra                          |
+|---------------------------|-----------------------------------------|
+| **Cooldown persistente**  | Tentativas de força bruta               |
+| **Sanitização de links**  | Redirecionamentos maliciosos           |
+| **Logs de segurança**     | Reconhecimento de padrões e auditoria   |
+
+
+
+
 
 ---
 
