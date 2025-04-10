@@ -22,7 +22,7 @@ Criei essa Landing Page como parte do meu aprendizado em desenvolvimento web. To
 
 - 🎨 **Design próprio**: Layout 100% desenvolvido por mim.
 - 🧩 **Ícones personalizados**: Utilizei recursos do Font Awesome e Flaticon para enriquecer a interface.
-- ⚙️ **CSS otimizado**: Utilizei o `clean-css-cli` para minificar e melhorar o desempenho do CSS.
+- ⚙️ **Automação com Gulp**: Utilizei o Gulp.js para automatizar tarefas como minificação de CSS,
 - 💬 **Chatbot interativo e seguro**: Um bot simples, porém com diversas proteções contra ataques.
 - 📱 **Layout responsivo**: Adaptado para diferentes tamanhos de tela.
 
@@ -90,9 +90,13 @@ A segurança é um dos pilares do meu projeto. Para garantir uma experiência pr
 
 ## 📦 Instalação
 
-Para tornar o CSS mais leve e eficiente, utilizei o pacote [`clean-css-cli`](https://www.npmjs.com/package/clean-css-cli), que permite minificar e combinar arquivos CSS diretamente pelo terminal.
+Além do uso das tecnologias base (HTML, CSS, JS), configurei o Gulp com scripts para automatizar tarefas essenciais no build do projeto, como:
 
-Além disso, configurei o **Gulp** com scripts para automatizar tarefas essenciais no build do projeto.
+Minificação e concatenação de arquivos CSS e JS
+
+Watch automático com recarregamento no navegador
+
+Organização de diretórios para produção
 
 ---
 
