@@ -39,7 +39,6 @@ A aplicação foi avaliada com ótimos resultados na auditoria do Lighthouse:
 | **Best Practices**| 100      |
 | **SEO**           | 100      |
 
-Esses indicadores reforçam a qualidade do projeto em termos de velocidade, acessibilidade, boas práticas e visibilidade nos mecanismos de busca. 🚀
 
 ---
 
