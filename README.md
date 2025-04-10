@@ -1,36 +1,40 @@
+# 🌌 Galactic Luna 🚀🌕
 
-🌌 Galactic Luna 🚀🌕
-<h1 style="text-align: center;">Landing Page com HTML, CSS e JavaScript ✨</h1>
+<h1 align="center">Landing Page com HTML, CSS e JavaScript ✨</h1>
+
 Olá, Viajantes! 👨‍🚀
 
 Criei essa Landing Page como parte do meu aprendizado em desenvolvimento web. Todo o layout foi desenhado por mim, desde a ideia até a implementação. Utilizei HTML, CSS e JavaScript puro para construir uma experiência bonita, responsiva e interativa.
 
-🛠️ Tecnologias Utilizadas
-<div style="display: inline_block"> <img align="center" alt="GL-HTML" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg"> <img align="center" alt="GL-CSS" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg"> <img align="center" alt="GL-JS" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg"> </div>
-✨ Principais Funcionalidades
-🎨 Design próprio: Layout 100% desenvolvido por mim.
+---
 
-🧩 Ícones personalizados: Utilizei recursos do Font Awesome e Flaticon para enriquecer a interface.
+## 🛠️ Tecnologias Utilizadas
 
-⚙️ CSS otimizado: Utilizei o clean-css-cli para minificar e melhorar o desempenho do CSS.
-
-💬 Chatbot interativo e seguro: Um bot simples, porém com diversas proteções contra ataques.
-
-📱 Layout responsivo: Adaptado para diferentes tamanhos de tela.
-
-🧠 Segurança no Chatbot: Validações implementadas
-Me preocupei bastante com a segurança do chatbot, e implementei várias camadas de proteção contra ataques comuns. Abaixo estão os principais tipos de ameaças bloqueadas:
+<div style="display: inline_block">
+  <img align="center" alt="GL-HTML" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="GL-CSS" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="GL-JS" height="70" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+</div>
 
 ---
 
+## ✨ Principais Funcionalidades
+
+- 🎨 **Design próprio**: Layout 100% desenvolvido por mim.
+- 🧩 **Ícones personalizados**: Utilizei recursos do Font Awesome e Flaticon para enriquecer a interface.
+- ⚙️ **CSS otimizado**: Utilizei o `clean-css-cli` para minificar e melhorar o desempenho do CSS.
+- 💬 **Chatbot interativo e seguro**: Um bot simples, porém com diversas proteções contra ataques.
+- 📱 **Layout responsivo**: Adaptado para diferentes tamanhos de tela.
+
+---
 
 ## 🔒 Validações de Segurança no Chatbot
 
 A segurança é um dos pilares do meu projeto. Para garantir uma experiência protegida ao usuário, implementei diversas validações no chatbot com foco na **prevenção de ataques comuns** em aplicações web. Essas proteções foram pensadas para evitar a exploração de brechas e comportamentos maliciosos, garantindo uma interação segura, limpa e estável com o sistema.
 
-Obviamente, como qualquer sistema em desenvolvimento, ainda podem existir brechas — este projeto foi construído como parte do meu aprendizado em segurança da informação. As validações implementadas são fruto de estudos e testes práticos para entender como mitigar vulnerabilidades comuns de forma eficiente.
+> ⚠️ **Nota:** As validações de segurança implementadas neste projeto têm caráter **educativo**. Elas foram desenvolvidas como parte do meu **aprendizado em segurança web**. É importante ressaltar que **nenhum sistema está 100% seguro**.
 
-Abaixo, apresento uma tabela com os principais **tipos de ataques bloqueados** e as técnicas utilizadas para detecção e neutralização.
+> ⚠️ **Nota Importante:** Por se tratar de um projeto com fins educativos, **decidi exibir algumas proteções de segurança implementadas no chatbot**, mesmo sabendo que isso pode evidenciar possíveis brechas. Essa escolha foi feita com o objetivo de **aprender e compartilhar conhecimento**, reforçando que **em ambientes de produção, a exposição de detalhes técnicos deve ser cuidadosamente avaliada**.
 
 ---
 
@@ -57,30 +61,26 @@ Abaixo, apresento uma tabela com os principais **tipos de ataques bloqueados** e
 | **Sanitização de links**  | Redirecionamentos maliciosos           |
 | **Logs de segurança**     | Reconhecimento de padrões e auditoria   |
 
+---
 
+## 📦 Instalação
 
-
+Para tornar o CSS mais leve e eficiente, utilizei o pacote [`clean-css-cli`](https://www.npmjs.com/package/clean-css-cli), que permite **minificar** e **combinar** arquivos CSS diretamente pelo terminal. Isso melhora o tempo de carregamento e a performance da aplicação.
 
 ---
 
-📦 Instalação
-bash
-Copiar
-Editar
-npm install -g clean-css-cli
-🚀 Como usar
-bash
-Copiar
-Editar
-cleancss -o style.min.css style.css
-Esse processo ajudou a melhorar o carregamento da página e a organização do código.
+## 🙏 Considerações Finais
 
-🙏 Considerações Finais
-Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado  do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
+Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado — do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
 
-📬 Contato
-<div> <a href = "mailto:gabriellunajob@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a> <a href="https://www.linkedin.com/in/gabriel-luna-14b00821b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> </div><br>
+---
 
+## 📬 Contato
+
+<div>
+  <a href="mailto:gabriellunajob@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/gabriel-luna-14b00821b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+</div><br>
 
 ---
 
