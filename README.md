@@ -76,7 +76,7 @@ cleancss -o style.min.css style.css
 Esse processo ajudou a melhorar o carregamento da página e a organização do código.
 
 🙏 Considerações Finais
-Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado — do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
+Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado  do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
 
 📬 Contato
 <div> <a href = "mailto:gabriellunajob@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a> <a href="https://www.linkedin.com/in/gabriel-luna-14b00821b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> </div><br>
