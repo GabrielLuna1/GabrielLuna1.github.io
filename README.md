@@ -86,7 +86,7 @@ Para tornar o CSS mais leve e eficiente, utilizei o pacote [`clean-css-cli`](htt
 
 ## 🙏 Considerações Finais
 
-Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado — do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
+Foi uma jornada desafiadora e muito gratificante desenvolver esse projeto! Cada parte foi pensada com cuidado do design à segurança. Fico muito feliz com o resultado e estou aberto a sugestões para continuar melhorando.
 
 ---
 
