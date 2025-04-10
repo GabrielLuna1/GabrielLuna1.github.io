@@ -114,3 +114,5 @@ Fico muito feliz com o resultado e estou aberto a sugestões para continuar melh
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-luna-14b00821b/)
 
 ---
+
+![Image](https://github.com/user-attachments/assets/455ffe4d-2e98-47a4-a119-b3c8056952de)
